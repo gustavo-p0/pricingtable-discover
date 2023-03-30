@@ -1,0 +1,225 @@
+:root {
+  font-size: 10px;
+  --yellow: #ffcc29;
+  --blue: #1d539e;
+  --gray: #828799;
+  --page-background: #f9fbfc;
+  --white: #ffffff;
+  --text-color: #1e2338;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+/* body */
+
+body {
+  position: relative;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.6rem;
+  min-height: 100vh;
+}
+
+header {
+  background-color: var(--blue);
+  overflow: hidden;
+  height: 450px;
+}
+
+header > h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 4.8rem;
+  color: var(--white);
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+header > p {
+  text-align: center;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  max-width: 50ch;
+  margin-inline: auto;
+  color: var(--white);
+}
+
+.pricing-grid {
+  position: relative;
+  top: -125px;
+  margin-inline: auto;
+  max-width: 1105px;
+  display: grid;
+  grid-template-columns: repeat(3, calc((100% - 40px) / 3));
+  grid-template-rows: 490px;
+  column-gap: 20px;
+}
+
+/* pricing-item */
+.pricing-item {
+  justify-self: center;
+  height: 96%;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 1px 2px 0px rgba(142, 150, 185, 0.25);
+  background-color: var(--white);
+}
+
+.pricing-item > div {
+  padding: 0px 30px 30px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-item h2 {
+  color: var(--text-color);
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding: 25px 30px;
+  margin-bottom: 10px;
+}
+
+.pricing-item.highlight {
+  height: 100%;
+}
+.pricing-item.highlight h2 {
+  background-color: var(--yellow);
+}
+
+.pricing-item > div > p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--gray);
+  margin-bottom: 20px;
+}
+
+.pricing-item > div > hr {
+  padding: 0;
+  border: none;
+  height: 1px;
+  background-color: var(--gray);
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.pricing-item > div > ul {
+  list-style: inside;
+  list-style-image: url(../img/check.svg);
+}
+
+.pricing-item > div > ul > li {
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--gray);
+  line-height: 1.5;
+}
+
+.pricing-item > div > ul > li:first-child {
+  margin-top: 0px;
+}
+
+.pricing-item > div > ul > li > span {
+  margin-left: 12.5px;
+}
+
+.pricing-item > div > a {
+  display: block;
+  text-decoration: none;
+  width: 100%;
+  border-radius: 10px;
+  padding: 12px;
+  color: var(--blue);
+  border: 1px solid var(--blue);
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  background-color: transparent;
+  text-transform: uppercase;
+  margin-top: auto;
+}
+
+.pricing-item.highlight > div > a {
+  margin-bottom: 10px;
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.pricing-item > div > a:hover {
+  background-color: var(--yellow);
+  border: 1px solid var(--yellow);
+  color: var(--blue);
+  transition: all 200ms ease;
+}
+/* price display */
+
+.pricing-item > div > .price-display {
+  font-weight: 700;
+  font-size: 36px;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+.price-display > div > .price {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.price-display > .decimal,
+.price-display > .period {
+  font-size: 18px;
+}
+
+.price-display > .period {
+  color: var(--gray);
+  font-weight: 400;
+  font-size: 18px;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+@media (max-width: 1145px) {
+  .pricing-grid {
+    position: relative;
+    top: -125px;
+    margin-inline: auto;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: repeat(3, calc((100% - 40px) / 3));
+    grid-template-rows: 470px;
+    column-gap: 20px;
+  }
+}
+
+@media (max-width: 940px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 490px);
+    row-gap: 20px;
+  }
+}
+
+@media (max-width: 350px) {
+  header > h1 {
+    font-size: 3.2rem;
+  }
+  header > p {
+    font-size: 1.2rem;
+  }
+
+  .pricing-item > div > ul > li {
+    font-size: 1.2rem;
+  }
+} ;
